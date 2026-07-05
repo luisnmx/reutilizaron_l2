@@ -85,11 +85,11 @@ public class MiToolbar extends JToolBar {
 
     private void setUpEvents() {
         mbtnNuevo.addActionListener(e -> acciones.nuevo());
-        mbtnModificar.addActionListener(e -> acciones.eliminar());
+        mbtnModificar.addActionListener(e -> acciones.modificar());
         mbtnEliminar.addActionListener(e -> acciones.eliminar());
-        mbtnEliminar.addActionListener(e -> acciones.guardar());
-        mbtnEliminar.addActionListener(e -> acciones.cancelar());
-        mbtnEliminar.addActionListener(e -> acciones.salir());
+        mbtnGuardar.addActionListener(e -> acciones.guardar());
+        mbtnCancelar.addActionListener(e -> acciones.cancelar());
+        mbtnSalir.addActionListener(e -> acciones.salir());
     }
 public void estadoInicial(boolean esInicial) {
 	mbtnNuevo.setEnabled(esInicial);

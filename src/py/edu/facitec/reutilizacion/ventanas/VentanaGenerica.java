@@ -11,14 +11,15 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 import py.edu.facitec.reutilizacion.toolbar.MiToolbar;
+import javax.swing.table.DefaultTableModel;
 
 public abstract class VentanaGenerica extends JDialog {
 
 	private static final long serialVersionUID = 1L;
-	private JTable table;
 	private JTextField tBuscador;
 	private JPanel panelFormulario;
 	private MiToolbar miToolbar;
+	private JTable table;
 
 
 	/**
@@ -49,6 +50,17 @@ public abstract class VentanaGenerica extends JDialog {
 		getContentPane().add(scrollPane);
 		
 		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+			},
+			new String[] {
+				"New column", "New column", "New column"
+			}
+		));
 		scrollPane.setViewportView(table);
 		
 		JLabel lblNewLabel = new JLabel("Buscar");
@@ -85,5 +97,4 @@ public abstract class VentanaGenerica extends JDialog {
 	public MiToolbar getMiToolbar() {
 		return miToolbar;
 	}
-	
 }
